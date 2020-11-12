@@ -34,7 +34,7 @@ namespace DMAPI
                options.AddPolicy(name: MyAllowSpecificOrigins,
                    builder =>
                    {
-                       builder.WithOrigins("localhost:5050")
+                       builder.WithOrigins("*")
                            .AllowAnyMethod()
                            .AllowAnyHeader();
                    });

@@ -69,27 +69,27 @@ namespace DMAPI.Controllers
             }
         }
 
-        [HttpGet("get/{employeeId}")]
-        [Produces("application/json")]
-        public IActionResult GetEmployeeById(int id)
-        {
-            try
-            {
-                return Ok(_employeeServices.GetEmployeeById(id));
-            }
-            catch (Exception)
-            {
-                return StatusCode(500);
-            }
-        }
+        // [HttpGet("get/{employeeID}")]
+        // [Produces("application/json")]
+        // public IActionResult GetEmployeeById(int employeeID)
+        // {
+        //    try
+        //    {
+        //        return Ok(_employeeServices.GetEmployeeById(employeeID));
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500);
+        //    }
+        // }
 
         [HttpGet("get/{employeeEmail}")]
         [Produces("application/json")]
-        public IActionResult GetEmployeeByEmail(string email)
+        public IActionResult GetEmployeeByEmail(string employeeEmail)
         {
             try
             {
-                return Ok(_employeeServices.GetEmployeeByEmail(email));
+                return Ok(_employeeServices.GetEmployeeByEmail(employeeEmail));
             }
             catch (Exception)
             {

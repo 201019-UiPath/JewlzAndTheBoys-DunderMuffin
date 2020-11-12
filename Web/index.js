@@ -156,8 +156,8 @@ function ValidateLogin()
     var email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
     //const proxyurl
-    fetch(`https://localhost:44356/Employee/get/${email}`)
-    .then(response => response.json)
+    fetch(`https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`)
+    .then(response => response.json())
     .then(result => {
         if(!response.ok) {
             alert("Network response was not ok")
