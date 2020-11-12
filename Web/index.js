@@ -73,7 +73,7 @@ function AddProduct()
             GetAllProducts();
         }
     };
-    xhr.open("POST", 'https://localhost:44356/Product/add', true);
+    xhr.open("POST", 'https://localhost:44360/Product/add', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(product));
 }
@@ -175,21 +175,21 @@ function ValidateLogin()
 
 function GetAllProducts()
 {
-    fetch('https://localhost:44356/api/Product/get', true)
-    .then(response => response.json)
+    fetch('https://localhost:44360/api/Product/get')
+    .then(response => response.json())
     .then(result => {
         document.querySelectorAll('#products tbody tr').forEach(element => element.remove());
         let table = document.querySelector('#products tbody');
-        for(let i = 0; i < result.length(); ++i)
+        for(let i = 0; i < result.length; ++i)
         {
             let row = table.insertRow(table.rows.length);
-            let nameCell = row.Insert(0);
+            let nameCell = row.insertCell(0);
             nameCell.innerHTML = result[i].productName;
 
-            let descriptionCell = row.Insert(1);
+            let descriptionCell = row.insertCell(1);
             descriptionCell.innerHTML = result[i].productDescription;
 
-            let priceCell = row.Insert(2);
+            let priceCell = row.insertCell(2);
             priceCell.innerHTML = result[i].listPrice;
 
         }
