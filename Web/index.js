@@ -170,7 +170,10 @@ function ValidateLogin()
         }
     }
 
+    
     xhr.open("GET", `https://localhost:44360/api/Employee/get/${email}`, true)
+
+
     xhr.send();
     
     // fetch(`https://localhost:44360/api/Employee/get/${email}`)
