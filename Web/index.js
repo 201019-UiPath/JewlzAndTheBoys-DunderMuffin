@@ -170,24 +170,24 @@ function ValidateLogin()
         }
     }
 
-    xhr.open("GET", `https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`, true)
+    xhr.open("GET", `https://localhost:44360/api/Employee/get/${email}`, true)
     xhr.send();
-    /*
-    fetch(`https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`)
-    .then(response => response.json())
-    .then(result => {
-        if(!response.ok) {
-            alert("Network response was not ok")
-        } else {
-            if (result.employeePassword == password && result.employeeEmail == email) {
-                alert("success")
-                //Redirect to new page
-            } else {
-                alert("failed Login")
-            }
-        }
-    });
-    */
+    
+    // fetch(`https://localhost:44360/api/Employee/get/${email}`)
+    // .then(response => response.json())
+    // .then(result => {
+    //     if(!response.ok) {
+    //         alert("Network response was not ok")
+    //     } else {
+    //         if (result.employeePassword == password && result.employeeEmail == email) {
+    //             alert("success")
+    //             //Redirect to new page
+    //         } else {
+    //             alert("failed Login")
+    //         }
+    //     }
+    // });
+    
    
 }
 

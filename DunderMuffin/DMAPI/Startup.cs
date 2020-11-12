@@ -30,7 +30,8 @@ namespace DMAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options=> {
+            services.AddCors(options=> 
+            {
                options.AddPolicy(name: MyAllowSpecificOrigins,
                    builder =>
                    {
@@ -67,6 +68,8 @@ namespace DMAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
