@@ -174,7 +174,7 @@ function ValidateLogin()
 function GetAllProducts()
 {
     const proxyurl
-    fetch('https://localhost:44356/Product/getall')
+    fetch('https://localhost:44356/Product/get')
     .then(response => response.json)
     .then(result => {
         document.querySelectorAll('#products tbody tr').forEach(element => element.remove());
@@ -295,7 +295,7 @@ function UpdateProduct(id)
             GetAllProducts();
         }
     };
-    xhr.open("PUT", 'https://localhost:44356/Product/update', true);
+    xhr.open("PUT", 'https://localhost:44356/Product/Update', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(product));
 }
@@ -356,7 +356,7 @@ function DeleteProduct(id)
             GetAllProducts();
         }
     };
-    xhr.open("DELETE", 'https://localhost:44356/Product/delete', true);
+    xhr.open("DELETE", 'https://localhost:44356/Product/Delete', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(product));
 }
