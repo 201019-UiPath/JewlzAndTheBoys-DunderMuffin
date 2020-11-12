@@ -155,7 +155,7 @@ function ValidateLogin()
     var email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
     const proxyurl
-    fetch(`https://localhost:44356/Employee/validate/${email}`)
+    fetch(`https://localhost:44356/Employee/get/${email}`)
     .then(response => response.json)
     .then(result => {
         if(!response.ok) {
