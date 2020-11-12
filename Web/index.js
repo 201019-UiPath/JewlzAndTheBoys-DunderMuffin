@@ -170,7 +170,7 @@ function ValidateLogin()
         }
     }
 
-    xhr.open("GET", `https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`, true)
+    xhr.open("GET", `https://digimon-api.vercel.app/api/digimon/name/agumon`, true)
     xhr.send();
     /*
     fetch(`https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`)
