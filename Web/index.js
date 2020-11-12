@@ -1,58 +1,58 @@
 
 // (C)RUD
-// function AddLocation()
-// {
-//     let location = {};
-//     location.name = document.querySelector('#name').value;
-//     location.address = document.querySelector('#address').value;
-//     location.city = document.querySelector('#city').value;
-//     location.state = document.querySelector('#state').value;
-//     location.zip = document.querySelector('#zip').value;
+function AddLocation()
+{
+    let location = {};
+    location.name = document.querySelector('#name').value;
+    location.address = document.querySelector('#address').value;
+    location.city = document.querySelector('#city').value;
+    location.state = document.querySelector('#state').value;
+    location.zip = document.querySelector('#zip').value;
 
-//     let xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = function(){
-//         if(this.readyState == 4 && this.status > 199 && this.status < 300)
-//         {
-//             alert("New Location Added!");
-//             document.querySelector('#name').value = '';
-//             document.querySelector('#address').value = '';
-//             document.querySelector('#city').value = '';
-//             document.querySelector('#state').value = '';
-//             document.querySelector('#zip').value = '';
-//             GetAllLocations();
-//         }
-//     };
-//     xhr.open("POST", 'https://localhost:44356/Location/add', true);
-//     xhr.setRequestHeader('Content-Type', 'application/json');
-//     xhr.send(JSON.stringify(location));
-// }
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status > 199 && this.status < 300)
+        {
+            alert("New Location Added!");
+            document.querySelector('#name').value = '';
+            document.querySelector('#address').value = '';
+            document.querySelector('#city').value = '';
+            document.querySelector('#state').value = '';
+            document.querySelector('#zip').value = '';
+            GetAllLocations();
+        }
+    };
+    xhr.open("POST", 'https://localhost:44356/Location/add', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(location));
+}
 
-// function AddEmployee()
-// {
-//     let employee = {};
-//     employee.fname = document.querySelector('#fname').value;
-//     employee.lname = document.querySelector('#lname').value;
-//     employee.email = document.querySelector('#email').value;
-//     employee.password = document.querySelector('#password').value;
-//     employee.type = document.querySelector('#type').value;
+function AddEmployee()
+{
+    let employee = {};
+    employee.fname = document.querySelector('#fname').value;
+    employee.lname = document.querySelector('#lname').value;
+    employee.email = document.querySelector('#email').value;
+    employee.password = document.querySelector('#password').value;
+    employee.type = document.querySelector('#type').value;
 
-//     let xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = function(){
-//         if(this.readyState == 4 && this.status > 199 && this.status < 300)
-//         {
-//             alert("New Employee Added!");
-//             document.querySelector('#fname').value = '';
-//             document.querySelector('#lname').value = '';
-//             document.querySelector('#email').value = '';
-//             document.querySelector('#password').value = '';
-//             document.querySelector('#type').value = '';
-//             GetAllEmployees();
-//         }
-//     };
-//     xhr.open("POST", 'https://localhost:44356/Employee/add', true);
-//     xhr.setRequestHeader('Content-Type', 'application/json');
-//     xhr.send(JSON.stringify(employee));
-// }
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status > 199 && this.status < 300)
+        {
+            alert("New Employee Added!");
+            document.querySelector('#fname').value = '';
+            document.querySelector('#lname').value = '';
+            document.querySelector('#email').value = '';
+            document.querySelector('#password').value = '';
+            document.querySelector('#type').value = '';
+            GetAllEmployees();
+        }
+    };
+    xhr.open("POST", 'https://localhost:44356/Employee/add', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(employee));
+}
 
 function AddProduct()
 {
@@ -78,77 +78,77 @@ function AddProduct()
     xhr.send(JSON.stringify(product));
 }
 
-// function AddInventoryItem()
-// {
-//     let inventoryItem = {};
-//     inventoryItem.productId = document.querySelector('#productId').value;
-//     inventoryItem.locationId = document.querySelector('#locationId').value;
-//     inventoryItem.quantity = document.querySelector('#quantity').value;
+function AddInventoryItem()
+{
+    let inventoryItem = {};
+    inventoryItem.productId = document.querySelector('#productId').value;
+    inventoryItem.locationId = document.querySelector('#locationId').value;
+    inventoryItem.quantity = document.querySelector('#quantity').value;
 
-//     let xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = function(){
-//         if(this.readyState == 4 && this.status > 199 && this.status < 300)
-//         {
-//             alert("New InventoryItem Added!");
-//             document.querySelector('#productId').value = '';
-//             document.querySelector('#locationId').value = '';
-//             document.querySelector('#quantity').value = '';
-//             GetAllPapers();
-//         }
-//     };
-//     xhr.open("POST", 'https://localhost:44356/InventoryItem/add', true);
-//     xhr.setRequestHeader('Content-Type', 'application/json');
-//     xhr.send(JSON.stringify(paper));
-// }
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status > 199 && this.status < 300)
+        {
+            alert("New InventoryItem Added!");
+            document.querySelector('#productId').value = '';
+            document.querySelector('#locationId').value = '';
+            document.querySelector('#quantity').value = '';
+            GetAllPapers();
+        }
+    };
+    xhr.open("POST", 'https://localhost:44356/InventoryItem/add', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(paper));
+}
 
 //C(R)UD
-// function GetAllLocations()
-// {
-//     const proxyurl
-//     fetch('https://localhost:44356/Location/getall')
-//     .then(response => response.json)
-//     .then(result => {
-//         document.querySelectorAll('#locations tbody tr').forEach(element => element.remove());
-//         let table = document.querySelector('#locations tbody');
-//         for(let i = 0; i < result.length(); ++i)
-//         {
-//             let row = table.insertRow(table.rows.length);
-//             let rnCell = row.Insert(0);
-//             rnCell.innerHTML = result[i].name;
+function GetAllLocations()
+{
+    const proxyurl
+    fetch('https://localhost:44356/Location/getall')
+    .then(response => response.json)
+    .then(result => {
+        document.querySelectorAll('#locations tbody tr').forEach(element => element.remove());
+        let table = document.querySelector('#locations tbody');
+        for(let i = 0; i < result.length(); ++i)
+        {
+            let row = table.insertRow(table.rows.length);
+            let rnCell = row.Insert(0);
+            rnCell.innerHTML = result[i].name;
 
-//             let aCell = row.Insert(1);
-//             aCell.innerHTML = result[i].address;
+            let aCell = row.Insert(1);
+            aCell.innerHTML = result[i].address;
 
-//             let hideCell = row.Insert(2);
-//             hideCell.innerHTML = result[i].city;
+            let hideCell = row.Insert(2);
+            hideCell.innerHTML = result[i].city;
 
-//         }
-//     });
-// }
+        }
+    });
+}
 
-// function GetAllEmployees()
-// {
-//     const proxyurl
-//     fetch('https://localhost:44356/Employee/getall')
-//     .then(response => response.json)
-//     .then(result => {
-//         document.querySelectorAll('#employess tbody tr').forEach(element => element.remove());
-//         let table = document.querySelector('#employees tbody');
-//         for(let i = 0; i < result.length(); ++i)
-//         {
-//             let row = table.insertRow(table.rows.length);
-//             let rnCell = row.Insert(0);
-//             rnCell.innerHTML = result[i].name;
+function GetAllEmployees()
+{
+    const proxyurl
+    fetch('https://localhost:44356/Employee/getall')
+    .then(response => response.json)
+    .then(result => {
+        document.querySelectorAll('#employess tbody tr').forEach(element => element.remove());
+        let table = document.querySelector('#employees tbody');
+        for(let i = 0; i < result.length(); ++i)
+        {
+            let row = table.insertRow(table.rows.length);
+            let rnCell = row.Insert(0);
+            rnCell.innerHTML = result[i].name;
 
-//             let aCell = row.Insert(1);
-//             aCell.innerHTML = result[i].address;
+            let aCell = row.Insert(1);
+            aCell.innerHTML = result[i].address;
 
-//             let hideCell = row.Insert(2);
-//             hideCell.innerHTML = result[i].city;
+            let hideCell = row.Insert(2);
+            hideCell.innerHTML = result[i].city;
 
-//         }
-//     });
-// }
+        }
+    });
+}
 
 function ValidateLogin()
 {
@@ -196,85 +196,76 @@ function GetAllProducts()
     });
 }
 
-// function GetAllInventoryItems()
-// {
-//     const proxyurl
-//     fetch('https://localhost:44356/InventoryItem/getall')
-//     .then(response => response.json)
-//     .then(result => {
-//         document.querySelectorAll('#InventoryItem tbody tr').forEach(element => element.remove());
-//         let table = document.querySelector('#InventoryItem tbody');
-//         for(let i = 0; i < result.length(); ++i)
-//         {
-//             let row = table.insertRow(table.rows.length);
-//             let rnCell = row.Insert(0);
-//             rnCell.innerHTML = result[i].name;
+function GetAllInventoryItems()
+{
+    const proxyurl
+    fetch('https://localhost:44356/InventoryItem/getall')
+    .then(response => response.json)
+    .then(result => {
+        document.querySelectorAll('#InventoryItem tbody tr').forEach(element => element.remove());
+        let table = document.querySelector('#InventoryItem tbody');
+        for(let i = 0; i < result.length(); ++i)
+        {
+            let row = table.insertRow(table.rows.length);
+            let rnCell = row.Insert(0);
+            rnCell.innerHTML = result[i].name;
 
-//             let aCell = row.Insert(1);
-//             aCell.innerHTML = result[i].address;
+            let aCell = row.Insert(1);
+            aCell.innerHTML = result[i].address;
 
-//             let hideCell = row.Insert(2);
-//             hideCell.innerHTML = result[i].city;
+            let hideCell = row.Insert(2);
+            hideCell.innerHTML = result[i].city;
 
-//         }
-//     });
-// }
+        }
+    });
+}
 
 
 //CR(U)D
-// function UpdateInventoryItem()
-// {
-//     let digiName = document.querySelector('#digimonInput').value;
-//     //Simplest form takes in the URL you'll be querying, you can add additional request initializations in an object as a second parameter
-//     //returns a promise, you convert the response to json (which returns a promise), 
-//     //then you take the converted response and update your page
-//     fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
-//     .then(response => response.json())
-//     .then(result => {
-//         document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
-//         document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
-//         let caption = document.createElement('caption');
-//         caption.appendChild(document.createTextNode(result[0].name));
-//         document.querySelector('.digimonResult').appendChild(caption);
-//         document.querySelector('#digimonInput').value = '';
-//     });
-// }
+function UpdateInventoryItem()
+{
+    let digiName = document.querySelector('#digimonInput').value;
+    fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
+        document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
+        let caption = document.createElement('caption');
+        caption.appendChild(document.createTextNode(result[0].name));
+        document.querySelector('.digimonResult').appendChild(caption);
+        document.querySelector('#digimonInput').value = '';
+    });
+}
 
-// function UpdateEmployee()
-// {
-//     let digiName = document.querySelector('#digimonInput').value;
-//     //Simplest form takes in the URL you'll be querying, you can add additional request initializations in an object as a second parameter
-//     //returns a promise, you convert the response to json (which returns a promise), 
-//     //then you take the converted response and update your page
-//     fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
-//     .then(response => response.json())
-//     .then(result => {
-//         document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
-//         document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
-//         let caption = document.createElement('caption');
-//         caption.appendChild(document.createTextNode(result[0].name));
-//         document.querySelector('.digimonResult').appendChild(caption);
-//         document.querySelector('#digimonInput').value = '';
-//     });
-// }
+function UpdateEmployee()
+{
+    let digiName = document.querySelector('#digimonInput').value;
+    fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
+        document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
+        let caption = document.createElement('caption');
+        caption.appendChild(document.createTextNode(result[0].name));
+        document.querySelector('.digimonResult').appendChild(caption);
+        document.querySelector('#digimonInput').value = '';
+    });
+}
 
-// function UpdateLocation()
-// {
-//     let digiName = document.querySelector('#digimonInput').value;
-//     //Simplest form takes in the URL you'll be querying, you can add additional request initializations in an object as a second parameter
-//     //returns a promise, you convert the response to json (which returns a promise), 
-//     //then you take the converted response and update your page
-//     fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
-//     .then(response => response.json())
-//     .then(result => {
-//         document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
-//         document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
-//         let caption = document.createElement('caption');
-//         caption.appendChild(document.createTextNode(result[0].name));
-//         document.querySelector('.digimonResult').appendChild(caption);
-//         document.querySelector('#digimonInput').value = '';
-//     });
-// }
+function UpdateLocation()
+{
+    let digiName = document.querySelector('#digimonInput').value;
+    fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
+        document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
+        let caption = document.createElement('caption');
+        caption.appendChild(document.createTextNode(result[0].name));
+        document.querySelector('.digimonResult').appendChild(caption);
+        document.querySelector('#digimonInput').value = '';
+    });
+}
 
 
 function UpdateProduct(id)
@@ -302,41 +293,35 @@ function UpdateProduct(id)
 }
 
 //CRU(D)
-// function DeleteEmployee()
-// {
-//     let digiName = document.querySelector('#digimonInput').value;
-//     //Simplest form takes in the URL you'll be querying, you can add additional request initializations in an object as a second parameter
-//     //returns a promise, you convert the response to json (which returns a promise), 
-//     //then you take the converted response and update your page
-//     fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
-//     .then(response => response.json())
-//     .then(result => {
-//         document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
-//         document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
-//         let caption = document.createElement('caption');
-//         caption.appendChild(document.createTextNode(result[0].name));
-//         document.querySelector('.digimonResult').appendChild(caption);
-//         document.querySelector('#digimonInput').value = '';
-//     });
-// }
+function DeleteEmployee()
+{
+    let digiName = document.querySelector('#digimonInput').value;
+    fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
+        document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
+        let caption = document.createElement('caption');
+        caption.appendChild(document.createTextNode(result[0].name));
+        document.querySelector('.digimonResult').appendChild(caption);
+        document.querySelector('#digimonInput').value = '';
+    });
+}
 
-// function DeleteLocation()
-// {
-//     let digiName = document.querySelector('#digimonInput').value;
-//     //Simplest form takes in the URL you'll be querying, you can add additional request initializations in an object as a second parameter
-//     //returns a promise, you convert the response to json (which returns a promise), 
-//     //then you take the converted response and update your page
-//     fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
-//     .then(response => response.json())
-//     .then(result => {
-//         document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
-//         document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
-//         let caption = document.createElement('caption');
-//         caption.appendChild(document.createTextNode(result[0].name));
-//         document.querySelector('.digimonResult').appendChild(caption);
-//         document.querySelector('#digimonInput').value = '';
-//     });
-// }
+function DeleteLocation()
+{
+    let digiName = document.querySelector('#digimonInput').value;
+    fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
+        document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
+        let caption = document.createElement('caption');
+        caption.appendChild(document.createTextNode(result[0].name));
+        document.querySelector('.digimonResult').appendChild(caption);
+        document.querySelector('#digimonInput').value = '';
+    });
+}
 
 function DeleteProduct(id)
 {
@@ -362,21 +347,18 @@ function DeleteProduct(id)
     xhr.send(JSON.stringify(product));
 }
 
-// function DeleteInventoryItem()
-// {
-//     let digiName = document.querySelector('#digimonInput').value;
-//     //Simplest form takes in the URL you'll be querying, you can add additional request initializations in an object as a second parameter
-//     //returns a promise, you convert the response to json (which returns a promise), 
-//     //then you take the converted response and update your page
-//     fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
-//     .then(response => response.json())
-//     .then(result => {
-//         document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
-//         document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
-//         let caption = document.createElement('caption');
-//         caption.appendChild(document.createTextNode(result[0].name));
-//         document.querySelector('.digimonResult').appendChild(caption);
-//         document.querySelector('#digimonInput').value = '';
-//     });
-// }
+function DeleteInventoryItem()
+{
+    let digiName = document.querySelector('#digimonInput').value;
+    fetch(`https://digimon-api.vercel.app/api/digimon/name/${digiName}`)
+    .then(response => response.json())
+    .then(result => {
+        document.querySelector('.digimonResult img').setAttribute('src', result[0].img);
+        document.querySelectorAll('.digimonResult caption').forEach((element) => element.remove());
+        let caption = document.createElement('caption');
+        caption.appendChild(document.createTextNode(result[0].name));
+        document.querySelector('.digimonResult').appendChild(caption);
+        document.querySelector('#digimonInput').value = '';
+    });
+}
 
