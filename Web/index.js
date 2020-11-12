@@ -152,10 +152,27 @@ function AddProduct()
 
 function ValidateLogin()
 {
-    alert("login");
+    let user = {};
+    let xhr = new XMLHttpRequest();
     var email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
-    //const proxyurl
+    
+    xhr.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            user = JSON.parse(xhr.responseText);
+            if (user.employeePassword == password && user.employeeEmail == email) {
+                alert("success")
+                //Redirect to new page
+            } else {
+                alert("failed Login")
+            }
+        }
+    }
+
+    xhr.open("GET", `https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`, true)
+    xhr.send();
+    /*
     fetch(`https://localhost:44360/api/Employee/get/MScott@DunderMuffin.com`)
     .then(response => response.json())
     .then(result => {
@@ -170,12 +187,14 @@ function ValidateLogin()
             }
         }
     });
+    */
+   
 }
 
 function GetAllProducts()
 {
     //const proxyurl
-    fetch('https://localhost:44356/Product/get')
+    fetch('https://localhost:44356/Product/get', true)
     .then(response => response.json)
     .then(result => {
         document.querySelectorAll('#products tbody tr').forEach(element => element.remove());
