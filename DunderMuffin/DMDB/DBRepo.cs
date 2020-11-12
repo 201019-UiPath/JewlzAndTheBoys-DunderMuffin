@@ -147,9 +147,9 @@ namespace DMDB
             return context.employees.Single(x => x.employeeID == id);
         }
 
-        public Employee GetEmployeeByFirstName(string name)
+        public Employee GetEmployeeByEmail(string email)
         {
-            return context.employees.Single(x => x.employeeFName == name);
+            return context.employees.Single(x => x.employeeEmail == email);
         }
 
         public List<Employee> GetAllEmployees()

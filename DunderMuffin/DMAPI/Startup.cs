@@ -30,15 +30,15 @@ namespace DMAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(options=> {
-            //    options.AddPolicy(name: MyAllowSpecificOrigins,
-            //        builder =>
-            //        {
-            //            builder.WithOrigins("filepath here")
-            //                .AllowAnyMethod()
-            //                .AllowAnyHeader();
-            //        });
-            //});
+            services.AddCors(options=> {
+               options.AddPolicy(name: MyAllowSpecificOrigins,
+                   builder =>
+                   {
+                       builder.WithOrigins("localhost:5050")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                   });
+            });
 
             services.AddControllers();
             services.AddDbContext<DMContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DMDB")));

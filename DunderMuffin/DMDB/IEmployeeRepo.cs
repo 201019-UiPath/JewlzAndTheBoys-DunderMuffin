@@ -12,7 +12,7 @@ namespace DMDB
         void UpdateEmployee(Employee employee);
         void DeleteEmployee(Employee employee);
         Employee GetEmployeeById(int id);
-        Employee GetEmployeeByFirstName(string name);
+        Employee GetEmployeeByEmail(string email);
         List<Employee> GetAllEmployees();
     }
 }

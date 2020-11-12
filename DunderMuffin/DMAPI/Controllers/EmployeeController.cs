@@ -83,13 +83,13 @@ namespace DMAPI.Controllers
             }
         }
 
-        [HttpGet("get/{employeeFName}")]
+        [HttpGet("get/{employeeEmail}")]
         [Produces("application/json")]
-        public IActionResult GetEmployeeByFirstName(string name)
+        public IActionResult GetEmployeeByEmail(string email)
         {
             try
             {
-                return Ok(_employeeServices.GetEmployeeByFirstName(name));
+                return Ok(_employeeServices.GetEmployeeByEmail(email));
             }
             catch (Exception)
             {

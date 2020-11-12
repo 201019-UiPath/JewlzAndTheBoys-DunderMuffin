@@ -32,9 +32,9 @@ namespace DMLib
             Employee employee = repo.GetEmployeeById(id);
             return employee;
         }
-        public Employee GetEmployeeByFirstName(string name)
+        public Employee GetEmployeeByEmail(string email)
         {
-            Employee employee = repo.GetEmployeeByFirstName(name);
+            Employee employee = repo.GetEmployeeByEmail(email);
             return employee;
         }
         public List<Employee> GetAllEmployees()
