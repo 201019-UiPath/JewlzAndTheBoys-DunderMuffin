@@ -175,7 +175,6 @@ function ValidateLogin()
 
 function GetAllProducts()
 {
-    //const proxyurl
     fetch('https://localhost:44356/Product/get', true)
     .then(response => response.json)
     .then(result => {
