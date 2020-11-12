@@ -152,9 +152,10 @@ function AddProduct()
 
 function ValidateLogin()
 {
+    alert("login");
     var email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
-    const proxyurl
+    //const proxyurl
     fetch(`https://localhost:44356/Employee/get/${email}`)
     .then(response => response.json)
     .then(result => {
@@ -173,7 +174,7 @@ function ValidateLogin()
 
 function GetAllProducts()
 {
-    const proxyurl
+    //const proxyurl
     fetch('https://localhost:44356/Product/get')
     .then(response => response.json)
     .then(result => {
