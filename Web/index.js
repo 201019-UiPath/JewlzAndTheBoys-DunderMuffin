@@ -175,7 +175,7 @@ function ValidateLogin()
 
 function GetAllProducts()
 {
-    fetch('https://localhost:44356/Product/get', true)
+    fetch('https://localhost:44356/api/Product/get', true)
     .then(response => response.json)
     .then(result => {
         document.querySelectorAll('#products tbody tr').forEach(element => element.remove());
