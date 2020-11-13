@@ -10,7 +10,7 @@
 
     <title>Dunder Muffin</title>
   </head>
-  <body onload="GetAllProducts()">
+  <body">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Dunder Muffin</a>
@@ -36,9 +36,9 @@
         <form action="">
             <div class="form-group">
                 <label for="alias">Product:</label>
-                <input type="text" class="form-control" id='alias' placeholder="Enter Product Name">
+                <input type="text" class="form-control" id='productName' placeholder="Enter Product Name">
             </div>
-            <input type="button" value="See Products" class="btn btn-secondary" onclick="GetAllProducts()">
+            <input type="button" value="See Products" class="btn btn-secondary" onclick="GetSomeProducts()">
         </form>
     </div>
     <div id="productTable" class="container">

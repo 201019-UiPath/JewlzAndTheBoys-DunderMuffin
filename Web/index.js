@@ -104,7 +104,7 @@ function AddInventoryItem()
 //C(R)UD
 function GetAllLocations()
 {
-    const proxyurl
+    //const proxyurl
     fetch('https://localhost:44356/Location/getall')
     .then(response => response.json)
     .then(result => {
@@ -128,7 +128,7 @@ function GetAllLocations()
 
 function GetAllEmployees()
 {
-    const proxyurl
+    //const proxyurl
     fetch('https://localhost:44356/Employee/getall')
     .then(response => response.json)
     .then(result => {
@@ -163,7 +163,7 @@ function ValidateLogin()
             user = JSON.parse(xhr.responseText);
             if (user.employeePassword == password && user.employeeEmail == email) {
                 alert("success")
-                //Redirect to new page
+                location.href = 'Employee.html';
             } else {
                 alert("failed Login")
             }
@@ -196,9 +196,34 @@ function GetAllProducts()
     });
 }
 
+function GetSomeProducts()
+{
+    let product = document.querySelector('#productName').value;
+    fetch('https://localhost:44360/api/Product/get')
+    .then(response => response.json())
+    .then(result => {
+        document.querySelectorAll('#products tbody tr').forEach(element => element.remove());
+        let table = document.querySelector('#products tbody');
+        for(let i = 0; i < result.length; ++i)
+        {
+            if(result[i].productName == product){
+                let row = table.insertRow(table.rows.length);
+                let nameCell = row.insertCell(0);
+                nameCell.innerHTML = result[i].productName;
+
+                let descriptionCell = row.insertCell(1);
+                descriptionCell.innerHTML = result[i].productDescription;
+
+                let priceCell = row.insertCell(2);
+                priceCell.innerHTML = result[i].listPrice;
+            }   
+        }
+    });
+}
+
 function GetAllInventoryItems()
 {
-    const proxyurl
+    //const proxyurl
     fetch('https://localhost:44356/InventoryItem/getall')
     .then(response => response.json)
     .then(result => {
